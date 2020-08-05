@@ -1,6 +1,9 @@
 package detaM;
 
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -10,6 +13,7 @@ public class Heads__Tails {
 
 	List<Integer> numbers = new ArrayList<>();
 	List<String> results = new ArrayList<>();
+	private String name;
 
 
 	public String geamStart() {
@@ -38,6 +42,19 @@ public class Heads__Tails {
 
 			return "Heads:" + headsNumber + ", Tails: " + tailsNumber;
 	}
+
+	public void greet() {
+		System.out.println("Who are you?");
+		BufferedReader reader = new BufferedReader (new InputStreamReader (System.in));
+		  try {
+			  name= reader.readLine();
+			  System.out.println("Hello," + name + "!");
+		  }catch (IOException e) {
+			  	System.out.println (e);
+		  }
+
+	}
+
 
 
 
