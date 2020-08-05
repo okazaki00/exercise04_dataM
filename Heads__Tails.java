@@ -10,6 +10,7 @@ public class Heads__Tails {
 
 	List<Integer> numbers = new ArrayList<>();
 	List<String> results = new ArrayList<>();
+	private String name;
 
 
 	public String geamStart() {
@@ -27,6 +28,7 @@ public class Heads__Tails {
 	public String geamFinish() {
 		int headsNumber = 0;
 		int tailsNumber = 0;
+		String message;
 
 		for(String str: results) {
 			if(str.equals("Heads")){
@@ -36,7 +38,15 @@ public class Heads__Tails {
 			}
 		}
 
-			return "Heads:" + headsNumber + ", Tails: " + tailsNumber;
+		if(headsNumber > tailsNumber) {
+			message = name + "  won!";
+		}else {
+			message = name + "  lost......";
+		}
+
+		String br = System.getProperty("line.separator");
+
+			return "Heads:" + headsNumber + ", Tails: " + tailsNumber + br + message;
 	}
 
 
